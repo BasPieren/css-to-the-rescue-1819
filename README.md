@@ -1,4 +1,77 @@
-# CSS to the Rescue @cmda-minor-web 18-19
+# CSS to the Rescue @cmda-minor-web 18-19 ⚙️
+
+This is my repo for the CSS to the Rescue course.
+
+<!-- ![Web App from Scratch Screenshot](https://i.imgur.com/JNxqzvJ.png) -->
+
+## Table of Contents 🗃
+* [To Do](#to-do-)
+* [Description](#description-)
+* [Installing](#installing-)
+  * [Packages and Technologies](#packages-and-technologies)
+* [How It Works](#how-it-works-)
+  * [Fetching API Data](#fetching-api-data)
+  * [Rendering Data](#rendering-data)
+* [Sources](#sources-)
+  * [Honourable Mentions](#honourable-mentions)
+* [Licence](#licence-)
+
+## To Do 📌
+This is a list of things I want to do in this course:
+
+### Week 1
+[Project link](https://baspieren.github.io/css-to-the-rescue-1819/week1/)
+
+- [ ] .
+- [ ] .
+- [ ] .
+- [ ] .
+- [ ] .
+
+### Week 2
+- [ ] .
+- [ ] .
+- [ ] .
+- [ ] .
+- [ ] .
+
+### Week 3
+- [ ] .
+- [ ] .
+- [ ] .
+- [ ] .
+- [ ] .
+
+## Description 📝
+
+
+## Installing 🔍
+To install this application enter the following into your terminal:
+```
+git clone https://baspieren.github.io/css-to-the-rescue-1819/.git
+
+cd css-to-the-rescue-1819
+```
+
+### Packages and Technologies
+This project makes use of the following packages and technologies:
+
+  * None!
+
+## How It Works 🛠️
+Here I explain some of the core concepts of this project.
+
+
+## Sources 📚
+
+
+### Honourable Mentions
+
+
+## Licence 🔓
+MIT © [Bas Pieren](https://github.com/BasPieren)
+
+<!-- # CSS to the Rescue @cmda-minor-web 18-19
 
 _This course is in English_
 
@@ -18,7 +91,7 @@ In this three week course you are going to create an innovative, pleasurable use
 
 [See all the details of week 1 here](week1/).
 
-Goals of this week: 
+Goals of this week:
 
 - Be inspired
 - Understand the cascade, inheritance and specificity
@@ -28,17 +101,17 @@ Goals of this week:
 
 <!-- [Slides](https://drive.google.com/open?id=1Rjl9xqXoKniQSRJPdkU1O5YwWC33SJK8KiV0a-H_xZU) -->
 
-### Week 2 - Create Stuff, 🙃 Smile 
+<!-- ### Week 2 - Create Stuff, 🙃 Smile
 
-This week’s goals: Create stuff, break stuff, and learn from each other
+This week’s goals: Create stuff, break stuff, and learn from each other -->
 
 <!-- [Opdrachten](https://drive.google.com/open?id=1GMDTdW3LycAYpZSFI6gk_lrKrx8-zLWrNh69aaVEH5Y) -->
 
 <!-- [Slides](https://drive.google.com/open?id=1IqQeu1m0dQiSC_KCvrn8eencAgtYe7X6qT-gm0n9Bmc) -->
 
-### Week 3 - 🎪 Show time
+<!-- ### Week 3 - 🎪 Show time
 
-Goals: Blow us away
+Goals: Blow us away -->
 
 <!-- [Opdrachten](https://drive.google.com/open?id=13pKQu72pshaEzKw9q5JHLa-aop85nMP6nDCdqioWjoQ) -->
 
@@ -61,4 +134,4 @@ Goals: Blow us away
 
 <!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
 
-<!-- How about a license here? 📜 (or is it a licence?) 🤷 -->
+<!-- How about a license here? 📜 (or is it a licence?) 🤷 --> -->
