@@ -10,8 +10,6 @@ This is my repo for the CSS to the Rescue course.
 * [Installing](#installing-)
   * [Packages and Technologies](#packages-and-technologies)
 * [How It Works](#how-it-works-)
-  * [Fetching API Data](#fetching-api-data)
-  * [Rendering Data](#rendering-data)
 * [Sources](#sources-)
   * [Honourable Mentions](#honourable-mentions)
 * [Licence](#licence-)
@@ -134,4 +132,4 @@ Goals: Blow us away -->
 
 <!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
 
-<!-- How about a license here? 📜 (or is it a licence?) 🤷 --> -->
+<!-- How about a license here? 📜 (or is it a licence?) 🤷 -->
