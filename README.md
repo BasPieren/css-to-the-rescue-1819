@@ -2,7 +2,7 @@
 
 This is my repo for the CSS to the Rescue course.
 
-<!-- ![Web App from Scratch Screenshot](https://i.imgur.com/JNxqzvJ.png) -->
+![CSS to the Rescue Screenshot](https://i.imgur.com/oDALRzd.png)
 
 ## Table of Contents 🗃
 * [To Do](#to-do-)
