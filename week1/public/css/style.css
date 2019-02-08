@@ -46,6 +46,8 @@ section {
 
   @page {
     size: landscape;
+    margin: 10mm;
+    bleed: 3mm;
   }
 
   body > section:nth-child(1) {
@@ -87,11 +89,18 @@ section {
     text-align: right;
   }
 
-  section > div {
+  section > div{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 1cm;
+  }
+
+  section > div:first-child {
+    padding-right: 5mm;
+  }
+
+  section > div:last-child {
+    padding-left: 5mm;
   }
 
   section:nth-child(1) > div {
