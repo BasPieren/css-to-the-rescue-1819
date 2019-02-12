@@ -4,8 +4,18 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: system-ui, sans-serif;
   color: #2d2d2d;
+  overflow: hidden;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  background-color: #7C4AFF;
 }
 
 @media screen {
@@ -16,24 +26,51 @@ body {
 
   h1 {
     font-size: 10em;
+    color: #ffffff;
     text-transform: uppercase;
+    transition: 1s;
+    animation: h1-tild 1s alternate infinite ease-in-out;
   }
 
-  p {
+  h1 span{
+    font-weight: 100;
+    transition: 0.1s;
+  }
+
+  h1 span:hover{
+    font-weight: 600;
+  }
+
+  h2{
+    color: #ffffff;
+    font-weight: 100;
+  }
+
+  h2 span{
+    font-weight: normal;
+  }
+
+  button {
+    margin: 5em auto 0 auto;
+    padding: 0.5em 1em;
     font-size: 1em;
-    font-weight: 300;
+    border: none;
+    border-radius: 20em;
+    transition: 0.2s;
   }
 
-  div:first-child {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100vh;
-    text-align: center;
+  button:hover{
+    background-color: #f7d70d;
+    cursor: pointer;
   }
 
-  div:first-child > p {
+  div p {
     margin-top: 5em;
+  }
+
+  @keyframes h1-tild {
+    from {transform: rotate(2deg)}
+    to {transform: rotate(-2deg)}
   }
 
 }
@@ -41,15 +78,43 @@ body {
 @media print {
 
   @page {
-    size: A5;
+    size: A4;
     margin: 10mm;
     bleed: 3mm;
     page-break-before: always;
   }
 
+  @page:first {
+    @bottom-left {
+      content: normal;
+    }
+    @bottom-right {
+      content: normal;
+    }
+  }
+
   @page:left {
-    @bottom-left{
+    @bottom-left {
+      content: counter(page);
+      font-family: sans-serif;
+      font-size: 9pt;
+    }
+    @bottom-right {
       content: "Add Nonsense";
+      font-family: sans-serif;
+      font-size: 9pt;
+    }
+  }
+
+  @page:right {
+    @bottom-left {
+      content: "Add Nonsense";
+      font-family: sans-serif;
+      font-size: 9pt;
+    }
+    @bottom-right {
+      content: counter(page);
+      font-family: sans-serif;
       font-size: 9pt;
     }
   }
@@ -59,27 +124,44 @@ body {
   }
 
   h1 {
-    font-size: 24pt;
+    margin-bottom: 1em;
+    font-size: 72pt;
+    text-transform: uppercase;
   }
 
   h2 {
+    margin-bottom: 1em;
     font-size: 20pt;
+    color: #7c4aff;
+    text-transform: uppercase;
   }
 
   h3 {
     font-size: 16pt;
   }
 
+  main h3:first-of-type {
+    page-break-before: always;
+  }
+
   p {
     margin: 1em 0;
     font-size: 12pt;
+    font-weight: 300;
+    line-height: 1.3em;
   }
 
-  div:first-child {
+  a{
+    color: #7c4aff;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  div {
     page-break-after: always;
   }
 
-  div:first-child > p {
+  button {
     display: none;
   }
 
@@ -87,14 +169,17 @@ body {
     margin: 1em 0;
   }
 
-  figure > img {
-    max-height: 50mm;
+  img, video {
+    width: 100%;
+    height: 100%;
   }
 
   figure > figcaption {
-    margin-top: 1em;
+    margin-top: 0.5em;
     font-size: 10pt;
+    font-weight: 300;
     font-style: italic;
+    color: #2d2d2d;
   }
 
 }
