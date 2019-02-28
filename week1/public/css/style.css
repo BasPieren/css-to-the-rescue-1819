@@ -3,22 +3,23 @@
   margin: 0;
 }
 
-body {
-  font-family: system-ui, sans-serif;
-  color: #2d2d2d;
-  overflow: hidden;
-}
-
-div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100vh;
-  text-align: center;
-  background-color: #7C4AFF;
-}
-
 @media screen {
+
+  body {
+    font-family: system-ui, sans-serif;
+  }
+
+  div {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(90deg, #FF0D8C, #E50CE8, #B600FF, #6D0CE8, #360DFF);
+	  background-size: 400% 400%;
+    overflow: hidden;
+    animation: div-background-color 10s infinite ease-in-out;
+  }
 
   main {
     display: none;
@@ -29,24 +30,24 @@ div {
     color: #ffffff;
     text-transform: uppercase;
     transition: 1s;
-    animation: h1-tild 1s alternate infinite ease-in-out;
+    animation: h1-tilt 1s alternate infinite ease-in-out;
   }
 
-  h1 span{
+  h1 span {
     font-weight: 100;
-    transition: 0.1s;
+    transition: 0.2s;
   }
 
-  h1 span:hover{
+  h1 span:hover {
     font-weight: 600;
   }
 
-  h2{
+  h2 {
     color: #ffffff;
     font-weight: 100;
   }
 
-  h2 span{
+  h2 span {
     font-weight: normal;
   }
 
@@ -54,23 +55,108 @@ div {
     margin: 5em auto 0 auto;
     padding: 0.5em 1em;
     font-size: 1em;
-    border: none;
-    border-radius: 20em;
+    border-right: 3px solid #000000;
+    border-bottom: 3px solid #000000;
+    border-radius: 20px;
     transition: 0.2s;
+    box-sizing: border-box;
   }
 
-  button:hover{
-    background-color: #f7d70d;
+  button:hover {
+    border: none;
     cursor: pointer;
+  }
+
+  button:focus {
+    outline: none;
+  }
+
+  button:hover + svg {
+    animation: doodle-jump 1s ease-in-out, doodle-nudge 1.5s alternate infinite ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+  button:hover + svg > g:last-of-type{
+    animation: doodle-eye-movement 1.5s alternate infinite ease-in-out;
   }
 
   div p {
     margin-top: 5em;
   }
 
-  @keyframes h1-tild {
-    from {transform: rotate(2deg)}
-    to {transform: rotate(-2deg)}
+  div {
+    text-align: center;
+  }
+
+  form svg {
+    position: absolute;
+    max-width: 10em;
+    right: 20em;
+    bottom: -10em;
+    transition: 0.5s;
+  }
+
+  form svg:hover {
+    animation: doodle-no 0.2s alternate infinite ease-in-out;
+  }
+
+  div > svg {
+    position: absolute;
+    width: 10%;
+    height: auto;
+    left: 10em;
+    bottom: -1em;
+    transition: 0.5s;
+    animation: bubble-float 15s infinite ease-in-out, bubble-movement 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes div-background-color {
+    0% {background-position: 0% 50%;}
+  	50% {background-position: 100% 50%;}
+  	100% {background-position: 0% 50%;}
+  }
+
+  @keyframes h1-tilt {
+    from {transform: rotate(2deg);}
+    to {transform: rotate(-2deg);}
+  }
+
+  @keyframes doodle-no {
+    from {margin-left: 10px;}
+    to {margin-right: 10px;}
+  }
+
+  @keyframes doodle-jump {
+    0% {bottom: -10em;}
+    50% {bottom: 5em;}
+    60% {bottom: 0em;}
+    70% {bottom: 2em;}
+    80% {bottom: 0em;}
+    90% {bottom: 1em;}
+    100% {bottom: 0;}
+  }
+
+  @keyframes doodle-eye-movement {
+    0%, 40%{transform: translate(0px, 0px);}
+    50%, 100% {transform: translate(-5px, -5px);}
+  }
+
+  @keyframes doodle-nudge {
+    0%, 40%{transform: rotate(0deg);}
+    50%, 60% {transform: rotate(-5deg);}
+    60%, 70% {transform: rotate(0deg);}
+    70%, 80% {transform: rotate(-5deg);}
+    80%, 100% {transform: rotate(0deg);}
+  }
+
+  @keyframes bubble-float {
+    from{bottom: -8.5em;}
+    to{bottom: 90%; opacity: 0;}
+  }
+
+  @keyframes bubble-movement {
+    from{left: 8em;}
+    to{left: 12em;}
   }
 
 }
@@ -79,12 +165,19 @@ div {
 
   @page {
     size: A4;
-    margin: 10mm;
+    margin: 20mm;
     bleed: 3mm;
+    background-color: #360DFF;
     page-break-before: always;
   }
 
   @page:first {
+    margin: 20mm;
+
+    @top-center{
+      content: none;
+    }
+
     @bottom-left {
       content: normal;
     }
@@ -94,84 +187,174 @@ div {
   }
 
   @page:left {
+    margin-right: 30mm;
+
     @bottom-left {
+      margin-top: 10pt;
       content: counter(page);
       font-family: sans-serif;
-      font-size: 9pt;
+      font-size: 12pt;
+      font-weight: bolder;
+      color: #FF0D8C;
     }
+
     @bottom-right {
-      content: "Add Nonsense";
+      content: 'ADD NONSENSE';
       font-family: sans-serif;
-      font-size: 9pt;
+      font-size: 10pt;
+      font-weight: bolder;
+      text-transform: uppercase;
+      color: #FF0D8C;
     }
   }
 
   @page:right {
+    margin-left: 30mm;
+
     @bottom-left {
-      content: "Add Nonsense";
+      content: 'ADD NONSENSE';
       font-family: sans-serif;
-      font-size: 9pt;
+      font-size: 10pt;
+      font-weight: bolder;
+      color: #FF0D8C;
     }
+
     @bottom-right {
       content: counter(page);
       font-family: sans-serif;
-      font-size: 9pt;
+      font-size: 15pt;
+      font-weight: bolder;
+      color: #FF0D8C;
     }
   }
 
-  main > h2 {
+  div, section:last-of-type {
+    display: none;
+  }
+
+  main, section, section:first-of-type p:first-of-type {
     page-break-before: always;
   }
 
+  main {
+    position: relative;
+  }
+
+  section > div {
+    display: block;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    right: 5em;
+    bottom: 0em;
+    background-color: #ffffff;
+    z-index: -1;
+  }
+
+  section > div:before {
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    bottom: 100%;
+    border-top: 200px solid #ffffff;
+    border-right: 200px solid transparent;
+    z-index: -1;
+  }
+
+  section > div:after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    left: 100%;
+    bottom: 59.5%;
+    background-color: #ffffff;
+    transform: skewY(-50deg);
+    z-index: -1;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: sans-serif;
+    page-break-after: avoid;
+  }
+
   h1 {
-    margin-bottom: 1em;
+    margin: 0 0 3.5cm 0;
     font-size: 72pt;
+    color: #ffffff;
     text-transform: uppercase;
+    text-align: left;
+  }
+
+  h1 span {
+    color: #FF0D8C;
+    text-decoration: underline;
   }
 
   h2 {
-    margin-bottom: 1em;
-    font-size: 20pt;
-    color: #7c4aff;
+    margin-bottom: 20mm;
+    color: #FF0D8C;
+    font-size: 24pt;
     text-transform: uppercase;
   }
 
-  h3 {
-    font-size: 16pt;
+  h2:not(:first-child) {
+    color: #ffffff;
   }
 
-  main h3:first-of-type {
+  h2 span{
+    color: #FF0D8C;
+    text-decoration: underline;
+  }
+
+  h3 {
+    margin-bottom: 5mm;
+    font-size: 16pt;
+    color: #ffffff;
+  }
+
+  p + h3 {
+    margin-top: 10mm;
+  }
+
+  h3:first-of-type {
     page-break-before: always;
   }
 
   p {
-    margin: 1em 0;
+    margin: 0 0 1em 0;
     font-size: 12pt;
-    font-weight: 300;
-    line-height: 1.3em;
+    color: #ffffff;
+    font-family: sans-serif;
+    line-height: 17.5pt;
+    orphans: 3;
+    widows: 3;
   }
 
-  a{
-    color: #7c4aff;
-    font-weight: 500;
-    text-decoration: none;
+  a {
+    color: red;
   }
 
-  div {
-    page-break-after: always;
+  a:after {
+    content:" (" attr(title) ") ";
+    font-size:0.8em;
+    font-weight:normal;
   }
 
-  button {
-    display: none;
+  a:not([title]):after{
+    content:" (" attr(href) ") ";
+    font-size:0.8em;
+    font-weight:normal;
+  }
+
+  a:not([title], [href]):after{
+    content: '';
   }
 
   figure {
-    margin: 1em 0;
-  }
-
-  img, video {
-    width: 100%;
-    height: 100%;
+    page-break-inside: avoid;
+    margin: 2em 0;
   }
 
   figure > figcaption {
@@ -179,7 +362,16 @@ div {
     font-size: 10pt;
     font-weight: 300;
     font-style: italic;
-    color: #2d2d2d;
+    color: #ffffff;
+  }
+
+  video {
+    border: 1px solid red;
+  }
+
+  img, video {
+    width: 100%;
+    height: auto;
   }
 
 }
